@@ -144,7 +144,7 @@
 		},
 		"firewallModel": {
 			"type": "string",
-			"defaultValue": "byol",
+			"defaultValue": "bundle1",
 			"allowedValues": [
 				"byol",
 				"bundle1",

@@ -33,7 +33,7 @@
 		 	"metadata": {
 				 "description": "Your source public IP address. Added to the inbound NSG on eth0 (MGMT), to restrict access to the deployment."
 		 	},
-		 	"defaultValue": "0.0.0.0/0"
+		 	"defaultValue": "1.1.1.1/32"
 		},
 		"virtualNetworkName": {
 			"type": "string",
@@ -153,7 +153,7 @@
 		},
 		"firewallModel": {
 			 "type": "string",
-			 "defaultValue": "byol",
+			 "defaultValue": "bundle1",
 			 "allowedValues": [
 					"byol",
 					"bundle1",
@@ -213,6 +213,7 @@
 		},
 		"username": {
 			"type": "string",
+			"defaultValue": "pandemo",
 			"metadata": {
 				"description": "Username of the administrator account of VM instances"
 			}
@@ -230,7 +231,7 @@
 		},
 		"password": {
 			"type": "securestring",
-			"defaultValue": "",
+			"defaultValue": "demopassword",
 			"metadata": {
 				"description": "Password for the administrator account of all VM instances. Must be specified if Authentication Type is 'password'."
 			}

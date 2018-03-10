@@ -2,40 +2,42 @@
 
 ![alt_text](documentation/images/pan-logo-badge-green-dark-kick-up.png "logo")
 
-# Azure Transit VNet
+# Azure Transit VNet with the VM-Series
 
-This solution deploys both a Hub and Spoke VNet within the Microsoft Azure cloud framework. Both Hub and Spoke virtual networks are secured by Palo Alto Networks VM-Series firewalls. The Hub VNet provides secured centralized outbound access for all traffic originating within your Azure virtual networks. The Spoke VNet can provide secured inbound access for public facing workloads for each Spoke VNet individually. The Hub VNet must be deployed first with the Spoke VNets being deployed subsequently. Once the spoke is deployed the VNets are dynamically peered to allow cross VNet communication. For more information on deployment please see the Deployment Guide.
+The Azure Transit VNet with the VM-Series deploys a hub and spoke architecture to centralize commonly used services such as security and secure connectivity. All traffic to and from the Spokes will “transit” the Hub VNet and will be protected by the VM-Series next generation firewall. To get started, the Hub VNet must be deployed first with the Spoke VNets being deployed subsequently. Once the Spoke is deployed, the VNets are dynamically peered to allow cross VNet communication. For more information on deployment please see the [Deployment Guide](https://github.com/PaloAltoNetworks/Azure-Transit-VNet/blob/master/documentation/Azure_Transit_VNet_Deployment_Guide.pdf).
+
+Please note that the Azure Standard Load Balancer is still in preview and you will need to sign up with Azure to access this resource before launching the template. For further information on this see the link below.
+[Azure Standard Load Balancer(Preview)](https://docs.microsoft.com/en-us/azure/load-balancer/load-balancer-standard-overview)
 
 
 # Hub VNet
-The Hub VNet is deployed exclusively to handle outbound traffic that originates from within the Hub or Spoke Virtual Networks. This outbound work flow not only segments traffic that originates from outside of the VNet, but it also ensures that only whitelisted external requests are allowed by leveraging Palo Alto Networks Next Generation Firewall technology. By providing a single exit point for traffic originating within your virtual networks you can ensure that all outbound traffic is secured to the standards required by your organization.  
+The Hub VNet is deployed exclusively to handle outbound traffic that originates from within the Hub or Spoke VNet. This outbound work flow not only segments traffic that originates from outside of the VNet, but it also ensures that only whitelisted external requests are allowed by leveraging VM-Series security policies. By providing a single exit point for traffic originating within your VNets you can ensure that all outbound traffic is secured to the standards required by your organization. 
 
 This topology consists of
 - 2 VM-Series Firewalls
-- 1 Standard Outbound Loadbalancer
+- 1 Standard Outbound Load Balancer
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjpeezus%2FAzure-Transit-VNet%2Fmaster%2Fazure-pan-hub%2FazureDeployInfra.json)
-
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPaloAltoNetworks%2FAzure-Transit-VNET%2Fmaster%2Fazure-pan-hub%2FazureDeployInfra.json?token=AZoiWUdo2qPkcTjMXpY8_KOkrP2aBqp_ks5ahJwcwA%3D%3D)
 
 ![alt_text](documentation/images/Hub-Topology.PNG "topology")
 
 # Spoke VNet
-The Spoke VNet can be deployed to host public facing workloads as well as non public facing workloads. More than one spoke can be deployed by launching the spoke template multiple times. Please note that all return traffic from inbound web access requests will return through the same path it was received. Only traffic originating from the Hub and Spoke networks will exit the hub VNet exclusively. 
+Using the Spoke VNet template, you can deploy as many Spokes as needed to host internal only, or public facing workloads. Return traffic from inbound web access requests will traverse the same path it was received, and traffic originating from the Hub and Spoke networks will exit the hub VNet exclusively.
 
 This topology consists of
 - 1 Application Gateway listening on port 80. The App Gateway also functions as a public facing external load balancer
 - 2 VM-Series Firewalls
 - 1 Internal Loadbalancer
 - 2 Linux Web servers
-- 1 UDR sending all default route traffic to the Hub vnet Standard Loadbalancer.
+- 1 UDR sending all default route traffic to the Hub vnet Standard Load Balancer.
 
-[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjpeezus%2FAzure-Transit-VNet%2Fmaster%2Fazure-pan-spoke%2Fazuredeploy.json)
+[<img src="http://azuredeploy.net/deploybutton.png"/>](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FPaloAltoNetworks%2FAzure-Transit-VNET%2Fmaster%2Fazure-pan-spoke%2Fazuredeploy.json?token=AZoiWXZHIcxPcJG4iqbfyOUvHN1O8coUks5ahgGXwA%3D%3D)
 
 ![alt_text](documentation/images/Spoke-Topology.PNG "topology")
 
 
 # Deployment guide
-The deployment guide can be found [here](https://github.com/jpeezus/Azure-Transit-VNet/blob/master/documentation/Azure_Transit_VNet_Deployment_Guide.pdf)
+The deployment guide can be found [here](https://github.com/PaloAltoNetworks/Azure-Transit-VNet/blob/master/documentation/Azure_Transit_VNet_Deployment_Guide.pdf)
 
 
 # Support Policy

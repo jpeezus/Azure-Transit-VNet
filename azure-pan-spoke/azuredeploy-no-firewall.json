@@ -96,6 +96,7 @@
 		},
 		"username": {
 			"type": "string",
+			"defaultValue": "pandemo",
 			"metadata": {
 				"description": "Username of the administrator account of VM instances"
 			}
@@ -113,7 +114,7 @@
 		},
 		"password": {
 			"type": "securestring",
-			"defaultValue": "",
+			"defaultValue": "Dem0pa$$w0rd",
 			"metadata": {
 				"description": "Password for the administrator account of all VM instances. Must be specified if Authentication Type is 'password'."
 			}

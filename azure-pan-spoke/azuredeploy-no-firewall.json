@@ -63,6 +63,18 @@
 				"description": "CIDR for Backend WWW Network"
 			}
 		},
+		"backendVmSize": {
+			 "type": "string",
+			 "allowedValues": [
+					"Standard_A1",
+					"Standard_D1",
+					"Standard_D1_v2"
+			 ],
+			 "metadata": {
+				"description": "Azure VM size for backend VMs. Not all sizes are available in all regions."
+			 },
+			 "defaultValue": "Standard_D1"
+		},
 		"storageAccountName": {
 			"type": "string",
 			"metadata": {

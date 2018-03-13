@@ -49,62 +49,6 @@
 				"description": "CIDR for Virtual Network"
 			}
 		},
-		"MgmtSubnetName": {
-			"type": "string",
-			"defaultValue": "Mgmt",
-			"metadata": {
- 				"description": "Subnet for Management Network"
-			}
-		},
-		"mgmtSubnetPrefix": {
-			"type": "string",
-			"defaultValue": "192.168.0.0/24",
-					"metadata": {
-						"description": "CIDR for Management Network"
-					}
-			},
-		"untrustedSubnetName": {
-			"type": "string",
-			"defaultValue": "Untrust",
-			"metadata": {
-				"description": "Subnet for Untrusted Network"
-			}
-		},
-		"untrustedSubnetPrefix": {
-			"type": "string",
-			"defaultValue": "192.168.1.0/24",
-			"metadata": {
-				"description": "CIDR for Untrusted Network"
-			}
-		},
-		"trustedSubnetName": {
-			"type": "string",
-			"defaultValue": "Trust",
-			"metadata": {
-				"description": "Subnet for Trusted Network"
-			}
-		},
-		"trustedSubnetPrefix": {
-			"type": "string",
-			"defaultValue": "192.168.2.0/24",
-			"metadata": {
-				"description": "CIDR for Trusted Network"
-			}
-		},
-		"appGatewaySubnetName": {
-			"type": "string",
-			"defaultValue": "AppGWSubnet",
-			"metadata": {
-				"description": "Subnet for App Gateway"
-			}
-		},
-		"appGatewaySubnetPrefix": {
-			"type": "string",
-			"defaultValue": "192.168.3.0/24",
-			"metadata": {
-				"description": "CIDR for App Gateway"
-			}
-		},
 		"backendSubnetName": {
 			"type": "string",
 			"defaultValue": "backendSubnet",
@@ -118,53 +62,6 @@
 			"metadata": {
 				"description": "CIDR for Backend WWW Network"
 			}
-		},
-		"backendVmSize": {
-			 "type": "string",
-			 "allowedValues": [
-					"Standard_A1",
-					"Standard_D1",
-					"Standard_D1_v2"
-			 ],
-			 "metadata": {
-				"description": "Azure VM size for backend VMs. Not all sizes are available in all regions."
-			 },
-			 "defaultValue": "Standard_D1_v2"
-		},
-		"firewallModel": {
-			 "type": "string",
-			 "defaultValue": "byol",
-			 "allowedValues": [
-					"byol",
-					"bundle1",
-					"bundle2"
-			 ],
-			 "metadata": {
-				 "description": "byol = Bring Your Own License; bundle1 = Bundle 1 PAYG (Hourly); bundle2 = Bundle 2 PAYG (Hourly)"
-			 }
-		},
-		"firewallVmName": {
-			 "type": "string",
-			 "metadata": {
-				"description": "Name prefix of VM-Series VM in the Azure portal"
-			 },	
-			 "defaultValue": "VM-Series"
-		},
-		"firewallVmSize": {
-			 "type": "string",
-			 "allowedValues": [
-					"Standard_D3",
-					"Standard_D4",
-					"Standard_D3_v2",
-					"Standard_D4_v2",
-					"Standard_D5_v2",
-					"Standard_D14_v2",
-					"Standard_A4"
-			 ],
-			 "metadata": {
-				"description": "Azure VM size for VM-Series"
-			 },
-			 "defaultValue": "Standard_D3_v2"
 		},
 		"storageAccountName": {
 			"type": "string",

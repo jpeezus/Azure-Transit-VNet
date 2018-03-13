@@ -199,32 +199,8 @@
 					"virtualNetworkAddressPrefix": {
 						"value": "[parameters('virtualNetworkAddressPrefix')]"
 					},
-					"subnet0Name": {
-						 "value": "[parameters('MgmtSubnetName')]"
-					},
-					"subnet1Name": {
-						 "value": "[parameters('untrustedSubnetName')]"
-					},
-					"subnet2Name": {
-						 "value": "[parameters('trustedSubnetName')]"
-					},
-					"subnetLBName": {
-						 "value": "[parameters('appGatewaySubnetName')]"
-					},
 					"subnetWWWName": {
 						 "value": "[parameters('backendSubnetName')]"
-					},
-					"subnet0Prefix": {
-						 "value": "[parameters('mgmtSubnetPrefix')]"
-					},
-					"subnet1Prefix": {
-						 "value": "[parameters('untrustedSubnetPrefix')]"
-					},
-					"subnet2Prefix": {
-						 "value": "[parameters('trustedSubnetPrefix')]"
-					},
-					"subnetLBPrefix": {
-						 "value": "[parameters('appGatewaySubnetPrefix')]"
 					},
 					"subnetWWWPrefix": {
 						 "value": "[parameters('backendSubnetPrefix')]"

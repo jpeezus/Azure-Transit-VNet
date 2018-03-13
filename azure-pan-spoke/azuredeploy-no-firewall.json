@@ -220,7 +220,7 @@
 	"variables": {
 		"location" : "[resourceGroup().location]",
 		"rgname" : "[resourceGroup().name]",
-		"baseUrl" : "https://raw.githubusercontent.com/rranjeet/azure-pan-spoke/master",
+		"baseUrl" : "http://raw.githubusercontent.com/jpeezus/Azure-Transit-VNet/master/azure-pan-spoke",
 		"nsgURL" : "[concat(variables('baseUrl'),'/nsg-new.json')]",
 		"vnetURL" : "[concat(variables('baseUrl'),'/deployVnet.json')]",
 		"storageAccountSetupURL" : "[concat(variables('baseUrl'),'/deployStorage.json')]",

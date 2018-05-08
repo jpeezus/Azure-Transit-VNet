@@ -44,7 +44,7 @@
 		},
 		"virtualNetworkAddressPrefix": {
 			"type": "string",
-			"defaultValue": "192.168.0.0/16",
+			"defaultValue": "192.168.0.0/21",
 			"metadata": {
 				"description": "CIDR for Virtual Network"
 			}
@@ -149,7 +149,7 @@
 			 "metadata": {
 				"description": "Azure VM size for backend VMs. Not all sizes are available in all regions."
 			 },
-			 "defaultValue": "Standard_D1"
+			 "defaultValue": "Standard_D1_v2"
 		},
 		"firewallModel": {
 			 "type": "string",
@@ -184,7 +184,7 @@
 			 "metadata": {
 				"description": "Azure VM size for VM-Series"
 			 },
-			 "defaultValue": "Standard_D3"
+			 "defaultValue": "Standard_D3_v2"
 		},
 		"MgmtPublicIPAddressName": {
 			"type": "string",
@@ -249,7 +249,7 @@
 		"rgname" : "[resourceGroup().name]",
 		"LoadBalancerType" : "layer-7",
 		"firewallVmCount" : 2,
-		"baseUrl" : "http://raw.githubusercontent.com/jpeezus/Azure-Transit-VNet/master/azure-pan-spoke",
+		"baseUrl" : "https://raw.githubusercontent.com/PaloAltoNetworks/Azure-Transit-VNet/master/azure-pan-spoke",
 		"nsgURL" : "[concat(variables('baseUrl'),'/nsg-new.json')]",
 		"vnetURL" : "[concat(variables('baseUrl'),'/deployVnet.json')]",
 		"publicLBURL" : "[concat(variables('baseUrl'),'/public-lb-', variables('LoadBalancerType'), '.json')]",
